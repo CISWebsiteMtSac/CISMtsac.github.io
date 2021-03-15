@@ -10,6 +10,9 @@
 	padding-right: 0px;
 	padding-bottom: 0px;
 }
+a {
+	text-decoration: none;
+}
 .row {
 	width: 100%;
 	margin-top: 0px;
