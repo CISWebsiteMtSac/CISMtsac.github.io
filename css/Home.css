@@ -108,7 +108,7 @@ a {
 	width: 60%;
 	float: left;
 	font-family: "Source Sans Pro";
-	color: #343434;
+	color: #000000;
 	padding-bottom: 15px;
 }
 .noDisplay {
@@ -118,7 +118,7 @@ a {
 	padding-left: 5%;
 	padding-right: 5%;
 	margin-top: 5%;
-	color: #5C5C5C;
+	color: #000000;
 	font-weight: bold;
 	text-transform: uppercase;
 }
@@ -129,12 +129,12 @@ a {
 	line-height: 24px;
 	margin-top: 30px;
 	margin-bottom: 15px;
-	color: #B3B3B3;
+	color: #000000;
 }
 .right_article {
 	width: 40%;
-	float: left;
-	background-color: #F6F6F6;
+	float: right;
+	background-color: #ffffff;
 }
 .container .right_article ul {
 	margin-top: 0px;
@@ -179,15 +179,14 @@ a {
 	color: #FFFFFF;
 	letter-spacing: 2px;
 }
-.placeholder {
+.image {
 	/* [disabled]max-width: 400px;
 */
 	/* [disabled]max-height: 200px;
 */
-	width: 100%;
+	width: 50%;
 	padding-top: 30px;
-	/* [disabled]padding-left: 19px;
-*/
+	padding-left: 100px;
 	padding-bottom: 30px;
 	height: 100%;
 }
@@ -263,7 +262,7 @@ body {
 	width: 100%;
 	height: auto;
 }
-.placeholder {
+.image {
 	width: 100%;
 	margin-top: 22PX;
 	margin-right: 0px;
@@ -350,7 +349,7 @@ body {
 	height: auto;
 	padding-bottom: 25px;
 }
-.placeholder {
+.image {
 	margin-top: 0px;
 	margin-right: 0px;
 	margin-bottom: 0px;
@@ -359,7 +358,7 @@ body {
 	padding-right: 0px;
 	padding-bottom: 0px;
 	padding-left: 0px;
-	width: 100%;
+	width: 50%;
 	max-width: 100%;
 	height: auto;
 	max-height: 100%;
@@ -406,8 +405,8 @@ body {
 	height: auto;
 	padding-bottom: 27px;
 }
-.placeholder {
-	width: 100%;
+.image {
+	width: 50%;
 	margin-left: 0px;
 	margin-right: 0px;
 	padding-left: 0px;
