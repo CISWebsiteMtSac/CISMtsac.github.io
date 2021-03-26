@@ -1,4 +1,7 @@
 @charset "UTF-8";
+html {
+	background-color: #ededed;
+}
 .container {
 	background-color: #B8860B;
 	width: 90%;
