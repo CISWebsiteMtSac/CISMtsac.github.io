@@ -180,15 +180,14 @@ a {
 	letter-spacing: 2px;
 }
 .image {
-	/* [disabled]max-width: 400px;
-*/
-	/* [disabled]max-height: 200px;
-*/
+	display:block;
 	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
 	padding-top: 30px;
-	padding-left: 100px;
 	padding-bottom: 30px;
 	height: 100%;
+	object-fit: fill;
 }
 .left_half {
 	background-color: #52BAD5;
@@ -262,20 +261,7 @@ body {
 	width: 100%;
 	height: auto;
 }
-.image {
-	width: 100%;
-	margin-top: 22PX;
-	margin-right: 0px;
-	margin-bottom: 22PX;
-	margin-left: 0px;
-	padding-top: 0px;
-	padding-right: 0px;
-	padding-bottom: 0px;
-	padding-left: 0px;
-	max-width: 400px;
-	max-height: 200px;
-	height: auto;
-}
+
 .columns {
 	width: 100%;
 	margin-top: 0px;
@@ -349,20 +335,7 @@ body {
 	height: auto;
 	padding-bottom: 25px;
 }
-.image {
-	margin-top: 0px;
-	margin-right: 0px;
-	margin-bottom: 0px;
-	margin-left: 0px;
-	padding-top: 0px;
-	padding-right: 0px;
-	padding-bottom: 0px;
-	padding-left: 0px;
-	width: 50%;
-	max-width: 100%;
-	height: auto;
-	max-height: 100%;
-}
+
 .columns {
 	width: 100%;
 	margin-top: 6px;
@@ -405,13 +378,7 @@ body {
 	height: auto;
 	padding-bottom: 27px;
 }
-.image {
-	width: 50%;
-	margin-left: 0px;
-	margin-right: 0px;
-	padding-left: 0px;
-	padding-right: 0px;
-}
+ 
 .columns {
 	width: 50%;
 	float: left;
