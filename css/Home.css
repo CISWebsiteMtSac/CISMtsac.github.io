@@ -101,9 +101,7 @@ html {
 }
 .container .right_article ul {
 	margin-top: 0px;
-	margin-right: 0px;
 	margin-bottom: 0px;
-	margin-left: 0px;
 	padding-top: 0px;
 	padding-right: 0px;
 	padding-bottom: 0px;
@@ -115,8 +113,6 @@ html {
 	text-align: center;
 	background-color: #B3B3B3;
 	width: 90%;
-	margin-left: auto;
-	margin-right: auto;
 	margin-top: 10px;
 	margin-bottom: 10px;
 	padding-top: 15px;
@@ -154,3 +150,26 @@ html {
 	align-items: center;
 }
 
+/*Important for proper alignment of the tabs*/
+	
+	@media (min-width: 321px) and (max-width: 768px) {
+	.secondary_header ul li {
+		float: none;
+		margin-top: 28px;
+		margin-left: 0px;
+		width: 100%;
+	}
+	.container .secondary_header ul {
+		margin-top: 0px;
+		margin-right: 0px;
+		margin-bottom: 0px;
+		margin-left: 0px;
+		padding-top: 0px;
+		padding-right: 0px;
+		padding-bottom: 0px;
+		padding-left: 0px;
+		height: auto;
+		width: 100%;
+		text-align: center;
+	}
+	}
