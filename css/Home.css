@@ -93,6 +93,16 @@ html {
 	color: #000000;
 }
 
+/*Format of the images*/
+.container .left_article img {
+	width: 25%;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	padding-left:50px;
+	padding-right:50px;
+	height: auto;
+	object-fit: fill;
+}
 
 
 /*Format of the title at top, "Mt. SAC COMPUTER INFORMATION..."*/
@@ -105,17 +115,7 @@ html {
 	letter-spacing: 2px;
 }
 
-/*Format of the images*/
-.image {
-	width: 50%;
-	margin-left: auto;
-	margin-right: auto;
-	padding-top: 30px;
-	padding-bottom: 30px;
-	height: 100%;
-	object-fit: fill;
-	align-items: center;
-}
+
 
 /*Important for proper alignment of the tabs*/
 	
