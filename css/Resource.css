@@ -122,10 +122,18 @@ a {
 	padding-right: 5%;
 	text-align: center;
 	margin-top: 5%;
-	font-size: 250%;
+	font-size: 200%;
 	color: #000000;
 	font-weight: bold;
 	text-transform: uppercase;
+	width: auto;
+	height: auto;
+	padding: auto;
+	background-color: darkgoldenrod;
+	box-shadow: 0px 10px 5px grey;
+	border: 3px solid black;
+  	padding: 0px;
+  	text-align: center;
 }
 .container .left_article p {
 	padding-left: 5%;
