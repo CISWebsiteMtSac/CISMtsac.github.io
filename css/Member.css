@@ -1,5 +1,8 @@
 @charset "UTF-8";
 @import url(Home.css);
+img {
+	float: left;
+}
 /* Style the tab */
 .tab {
 	overflow: hidden;
