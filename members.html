@@ -6,6 +6,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CIS Club</title>
 <link href="css/Member.css" rel="stylesheet" type="text/css">
+<script>
+  function openO(evt, officers) {
+var i, tabcontent, tablinks;
+  }
+  function openO(evt, officers) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(officers).style.display = "block";
+    evt.currentTarget.className += " active";
+    
+  }
+  </script>
 </head>
 <body>
 <div class="container">
@@ -30,48 +49,93 @@
   <button class="tablinks" onclick="openO(event, 'president')">President</button>
   <button class="tablinks" onclick="openO(event, 'officer1')">Officer 1</button>
   <button class="tablinks" onclick="openO(event, 'officer2')">Officer 2</button>
+  <button class="tablinks" onclick="openO(event, 'officer3')">Officer 3</button>
 </div>
-
+<div class="tab">
+  <button class="tablinks" onclick="openO(event, 'alumni1')">Alumni 1</button>
+  <button class="tablinks" onclick="openO(event, 'officer1')">Officer 1</button>
+  <button class="tablinks" onclick="openO(event, 'officer2')">Officer 2</button>
+</div>
 <!-- Tab content -->
 <div id="president" class="tabcontent">
   <h2>President</h2>
   <!--Picture goes here later-->
-  <a href="https://www.mtsac.edu"><img class="logo" src="images/joe_mountie.png" alt="Joe Mountie" width = "300" height = "350" class="image"/></a>
-  <p>Chaos Control</p>
+  <img class="logo" src="images/joe_mountie.png" alt="Joe Mountie" width = "300" height = "350" class="image"/>
+  <p>Questions</p>
+  <div class="tab">
+    <button class="tablinks" onclick="openO(event, 'question1')">question</button>
+    <button class="tablinks" onclick="openO(event, 'question2')">question</button>
+    <button class="tablinks" onclick="openO(event, 'question3')">question</button>
+  </div>
 </div>
 
 <div id="officer1" class="tabcontent">
-  <h3>Officer 1</h3>
+  <h2>Officer 1</h2>
   <!--Picture goes here later-->
+  <img class="logo" src="images/joe_mountie.png" alt="Joe Mountie" width = "300" height = "350" class="image"/>
   <p>Chaos Control</p>
 </div>
 
 <div id="officer2" class="tabcontent">
-  <h3>Officer 1</h3>
+  <h2>Officer 2</h2>
   <!--Picture goes here later-->
+  <img class="logo" src="images/joe_mountie.png" alt="Joe Mountie" width = "300" height = "350" class="image"/>
   <p>Chaos Control</p>
+</div>
+
+  <div id="officer3" class="tabcontent">
+    <h2>Officer 3</h2>
+    <!--Picture goes here later-->
+    <img class="logo" src="images/joe_mountie.png" alt="Joe Mountie" width = "300" height = "350" class="image"/>
+    <p>Chaos Control</p>
+  </div>
+
+    <div id="alumni1" class="tabcontent">
+      <h2>Alumni 1</h2>
+      <!--Picture goes here later-->
+      <img class="logo" src="images/joe_mountie.png" alt="Joe Mountie" width = "300" height = "350" class="image"/>
+      <p>Chaos Control</p>
+    </div>
+    <div id="question1" class="tabcontent">
+      <h2>question</h2>
+      <!--Picture goes here later-->
+      <img class="logo" src="images/joe_mountie.png" alt="Joe Mountie" width = "300" height = "350" class="image"/>
+      <p>question</p>
+      <div class="tab">
+        <button class="tablinks" onclick="openO(event, 'question1')">question</button>
+        <button class="tablinks" onclick="openO(event, 'question2')">question</button>
+        <button class="tablinks" onclick="openO(event, 'question3')">question</button>
+      </div>
+    </div>
+    <div id="question2" class="tabcontent">
+      <h2>question 1</h2>
+      <!--Picture goes here later-->
+      <img class="logo" src="images/joe_mountie.png" alt="Joe Mountie" width = "300" height = "350" class="image"/>
+      <p>question</p>
+      <div class="tab">
+        <button class="tablinks" onclick="openO(event, 'question1')">dwadawdawd</button>
+        <button class="tablinks" onclick="openO(event, 'question2')">question</button>
+        <button class="tablinks" onclick="openO(event, 'question3')">question</button>
+      </div>
+    </div>
+    <div id="question3" class="tabcontent">
+      <h2>question 1</h2>
+      <!--Picture goes here later-->
+      <img class="logo" src="images/joe_mountie.png" alt="Joe Mountie" width = "300" height = "350" class="image"/>
+      <p>question</p>
+      <div class="tab">
+        <button class="tablinks" onclick="openO(event, 'question1')">question</button>
+        <button class="tablinks" onclick="openO(event, 'question2')">question</button>
+        <button class="tablinks" onclick="openO(event, 'question3')">question</button>
+      </div>
+    </div>
+
+
+
+
 </div>
     </article>
   
-    <script>
-      function openO(evt, officers) {
-    var i, tabcontent, tablinks;
-      }
-      function openO(evt, officers) {
-        var i, tabcontent, tablinks;
-        tabcontent = document.getElementsByClassName("tabcontent");
-        for (i = 0; i < tabcontent.length; i++) {
-          tabcontent[i].style.display = "none";
-        }
-        tablinks = document.getElementsByClassName("tablinks");
-        for (i = 0; i < tablinks.length; i++) {
-          tablinks[i].className = tablinks[i].className.replace(" active", "");
-        }
-        document.getElementById(officers).style.display = "block";
-        evt.currentTarget.className += " active";
-        
-      }
-      </script>
   </div>
   </footer>
 </div>
