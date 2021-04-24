@@ -2,6 +2,7 @@
 html {
 	background-color: #ededed;
 }
+/*Class Container, which is in home.html*/
 .container {
 	background-color: #B8860B;
 	width: 100%;
@@ -13,10 +14,13 @@ html {
 	padding-right: 0px;
 	padding-bottom: 0px;
 }
+
+/*Makes sure that the tabs don't have underlines*/
 a {
 	text-decoration: none;
 }
 
+/*Top part of the page*/
 .primary_header {
 	width: 100%;
 	background-image: linear-gradient(red, darkred, darkred);
@@ -26,6 +30,8 @@ a {
 	clear: left;
 	border-bottom: 2px solid #2C9AB7;
 }
+
+/*Area where the tabs are supposed to be*/
 .secondary_header {
 	width: 100%;
 	padding-top: 5px;
@@ -63,6 +69,8 @@ a {
 	color: #717070;
 	cursor: pointer;
 }
+
+/*Left side of the page where the text is*/
 .left_article {
 	background-color: #FFFFFF;
 	width: 100%;
@@ -101,6 +109,7 @@ a {
 	color: #000000;
 }
 
+/*Format of the title at top, "Mt. SAC COMPUTER INFORMATION..."*/
 .title {
 	font-weight: bold;
 	font-style: normal;
@@ -109,6 +118,8 @@ a {
 	color: #FFFFFF;
 	letter-spacing: 2px;
 }
+
+/*Format of the images*/
 .image {
 	width: 50%;
 	margin-left: auto;
@@ -137,6 +148,7 @@ body {
 	margin-left: 0px;
 }
 
+/*Important for proper alignment of the tabs*/
 @media (max-width: 320px) {
 .secondary_header ul li {
 	float: none;
