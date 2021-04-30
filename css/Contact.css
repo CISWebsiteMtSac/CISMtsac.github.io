@@ -120,11 +120,16 @@ a {
 	padding-left: 5%;
 	padding-right: 5%;
 	text-align: center;
-	font-size: 200%;
-	margin-top: 5%;
-	color: black;
+	font-size: 270%;
+	margin-top: 0%;
+	color: goldenrod;
 	font-weight: bold;
-	text-transform: uppercase;
+	text-transform: none;
+	letter-spacing: 2px;
+	color: black;
+  	-webkit-text-fill-color: white;
+  	-webkit-text-stroke-width: 1.5px;
+ 	-webkit-text-stroke-color: black;
 	width: auto;
 	height: auto;
 	padding: auto;
@@ -146,13 +151,25 @@ a {
 }
 .container .left_article button {
 	background-color: darkgoldenrod;
+	font-family: "Source Sans Pro";
 	box-shadow: 0px 10px 5px grey;
 	border: 3px solid black;
   	margin-top: 0%;
-	padding: 0px;
-	font-size: 125%;
+	padding: 5px;
+	font-size: 80%;
   	text-align: center;
   	cursor: pointer;
+	font-weight: bold;
+	font-style: normal;
+	font-family: "Source Sans Pro";
+	font-size: 35px;
+	text-align: center;
+	  
+	letter-spacing: 2px;
+	color: black;
+	-webkit-text-fill-color: white;
+	-webkit-text-stroke-width: 1.5px;
+	-webkit-text-stroke-color: black;
 }
 .right_article {
 	width: 40%;
@@ -198,9 +215,14 @@ a {
 	font-weight: bold;
 	font-style: normal;
 	font-family: "Source Sans Pro";
+	font-size: 50px;
 	text-align: center;
-	color: #FFFFFF;
+
 	letter-spacing: 2px;
+	color: black;
+  	-webkit-text-fill-color: white;
+  	-webkit-text-stroke-width: 1.5px;
+ 	-webkit-text-stroke-color: black;
 }
 .placeholder {
 	/* [disabled]max-width: 400px;

@@ -121,11 +121,16 @@ a {
 	padding-left: 5%;
 	padding-right: 5%;
 	text-align: center;
-	margin-top: 5%;
-	font-size: 200%;
-	color: #000000;
+	font-size: 270%;
+	margin-top: 0%;
+	color: goldenrod;
 	font-weight: bold;
-	text-transform: uppercase;
+	text-transform: capitalize;
+	letter-spacing: 2px;
+	color: black;
+  	-webkit-text-fill-color: white;
+  	-webkit-text-stroke-width: 1.5px;
+ 	-webkit-text-stroke-color: black;
 	width: auto;
 	height: auto;
 	padding: auto;
@@ -189,9 +194,14 @@ a {
 	font-weight: bold;
 	font-style: normal;
 	font-family: "Source Sans Pro";
+	font-size: 50px;
 	text-align: center;
-	color: #FFFFFF;
+	
 	letter-spacing: 2px;
+	color: black;
+  	-webkit-text-fill-color: white;
+  	-webkit-text-stroke-width: 1.5px;
+ 	-webkit-text-stroke-color: black;
 }
 .image {
 	width: 50%;
