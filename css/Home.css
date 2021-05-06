@@ -75,7 +75,7 @@ a {
 	background-color: #FFFFFF;
 	width: 100%;
 	float: left;
-	font-family: "Source Sans Pro";
+	font-family: "Helvetica";
 	color: #000000;
 	padding-bottom: 15px;
 }
@@ -84,15 +84,15 @@ a {
 	padding-left: 5%;
 	padding-right: 5%;
 	text-align: center;
-	font-size: 270%;
+	font-size: 35px;
 	margin-top: 0%;
 	color: goldenrod;
 	font-weight: bold;
 	text-transform: none;
-	letter-spacing: 2px;
+	letter-spacing: 0px;
 	color: black;
   	-webkit-text-fill-color: white;
-  	-webkit-text-stroke-width: 1.5px;
+  	-webkit-text-stroke-width: 2px;
  	-webkit-text-stroke-color: black;
 	width: auto;
 	height: auto;
@@ -109,7 +109,7 @@ a {
 	text-align: center;
 	line-height: 24px;
 	margin-top: 30px;
-	margin-bottom: 15px;
+	margin-bottom: 30px;
 	font-size: 150%;
 	color: #000000;
 }
@@ -118,14 +118,14 @@ a {
 .title {
 	font-weight: bold;
 	font-style: normal;
-	font-family: "Source Sans Pro";
-	font-size: 50px;
+	font-family: "Helvetica";
+	font-size: 40px;
 	text-align: center;
 	
-	letter-spacing: 2px;
+	letter-spacing: 0px;
 	color: black;
   	-webkit-text-fill-color: white;
-  	-webkit-text-stroke-width: 1.5px;
+  	-webkit-text-stroke-width: 2px;
  	-webkit-text-stroke-color: black;
 }
 
