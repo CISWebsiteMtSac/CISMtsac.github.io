@@ -7,7 +7,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>CIS Club</title>
   <link href="css/Member.css" rel="stylesheet" type="text/css">
+  <script>
+    function openPage(pageName, elmnt, color) {
+  // Hide all elements with class="tabcontent" by default */
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
 
+  // Remove the background color of all tablinks/buttons
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+
+  // Show the specific tab content
+  document.getElementById(pageName).style.display = "block";
+
+  // Add the specific color to the button used to open the tab content
+  elmnt.style.backgroundColor = color;
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+  </script>
 </head>
 
 <body>
@@ -28,61 +52,29 @@
     </header>
     <section>
       <article class="left_article">
-        <div class="tabGroup">
-          <input type="radio" name="tabGroup1" id="rad1" class="tab1" checked="checked" />
-          <input type="radio" name="tabGroup1" id="rad2" class="tab2" />
-          <input type="radio" name="tabGroup1" id="rad3" class="tab3" />
-          <input type="radio" name="tabGroup1" id="rad4" class="tab4" />
-          <input type="radio" name="tabGroup1" id="rad5" class="tab5" />
-          <input type="radio" name="tabGroup1" id="rad6" class="tab6" />
-          <input type="radio" name="tabGroup1" id="rad7" class="tab7" />
-          <div class="tablabels">
-            <label for="rad1">President: Ricardo Duran</label>
-            <label for="rad2">Officer1</label>
-            <label for="rad3">Officer2</label>
-            <label for="rad4">Officer3</label>
-            <label for="rad5">Alumni1</label>
-            <label for="rad6">Alumni1</label>
-            <label for="rad7">Alumni1</label>
-          </div>
-          <div class="tabcontent">
-            <div class="tab1">
-              <div class="tabGroup2">
-                <input type="radio" name="tabGroup2" id="rad21" class="last24" checked="checked" />
-                <input type="radio" name="tabGroup2" id="rad22" class="last7" />
-                <input type="radio" name="tabGroup2" id="rad23" class="last30" />
-                <div class="tablabels2">
-                  <label for="rad21">When did you graduate and what degree/certificate did you gain from it?</label>
-                  <label for="rad22">What's your current profession?</label>
-                  <label for="rad23">How did the CIS department/program help prepare you for your profession or in general?</label>
-                  <label for="prezQ4">How did the CIS department/program help prepare you for your profession or in general?</label>
-                </div>
-                <div class="tabcontent2">
-                    <!-- third nested tab -->
-                    <div class="tabGroup3">
-                      <input type="radio" name="tabGroup3" id="rad31" class="last24" checked="checked" />
-                      <input type="radio" name="tabGroup3" id="rad32" class="last7" />
-                      <input type="radio" name="tabGroup3" id="rad33" class="last30" />
-                  
-                    <!-- end third nested tab -->
-                  </div>
-                  <div class="last24">I graduated Spring of 2017 with my AS in Network Administration & Security Management.</div>
-                  <div class="last7">I worked for the last 3.5 years as an IT Analyst for a Major Credit Bureau. I was working heavily with Cloud Technologies like AWS. I was very recently hired on to a public energy utility to work as an IT Associate rotating within 3 departments. I an currently working with the Networking and Architecture department. In this department I will be tasked with maintaining network data circuits and network appliances such as switches, routers, firewalls.</div>
-                  <div class="last30">The Mt. SAC CIS department was key to preparing me for the IT jobs out there. Of course it is imperative that you learn new skills and technologies on your own by completing certificates or pursuing a higher education but the CIS department introduced me to people in IT with varying levels of experience. It was meeting those people that helped me get to where I am today.</div>
-                  <div class="prezQ4">The Mt. SAC CIS department was key to preparing me for the IT jobs out there. Of course it is imperative that you learn new skills and technologies on your own by completing certificates or pursuing a higher education but the CIS department introduced me to people in IT with varying levels of experience. It was meeting those people that helped me get to where I am today.</div>
-                </div>
-              </div>
-            </div>
-            <div class="tab2">Tab 2 content</div>
-            <div class="tab3">Tab 3 content</div>
-            <div class="tab4">Tab 4 content</div>
-            <div class="tab5">Tab 5 content</div>
-            <div class="tab6">Tab 6 content</div>
-            <div class="tab7">Tab 7 content</div>
-          </div>
-
-
-
+        <button class="tablink" onclick="openPage('Home', this, 'red' )" id="defaultOpen">Home</button>
+        <button class="tablink" onclick="openPage('News', this, 'green')">News</button>
+        <button class="tablink" onclick="openPage('Contact', this, 'blue')">Contact</button>
+        <button class="tablink" onclick="openPage('About', this, 'orange')">About</button>
+        
+        <div id="Home" class="tabcontent">
+          <h3>Home</h3>
+          <p>Home is where the heart is..</p>
+        </div>
+        
+        <div id="News" class="tabcontent">
+          <h3>News</h3>
+          <p>Some news this fine day!</p>
+        </div>
+        
+        <div id="Contact" class="tabcontent">
+          <h3>Contact</h3>
+          <p>Get in touch, or swing by for a cup of coffee.</p>
+        </div>
+        
+        <div id="About" class="tabcontent">
+          <h3>About</h3>
+          <p>Who we are and what we do.</p>
         </div>
       </article>
 
