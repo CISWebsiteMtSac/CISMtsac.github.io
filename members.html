@@ -9,28 +9,28 @@
   <link href="css/Member.css" rel="stylesheet" type="text/css">
   <script>
     function openPage(pageName, elmnt, color) {
-  // Hide all elements with class="tabcontent" by default */
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
+      // Hide all elements with class="tabcontent" by default */
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
 
-  // Remove the background color of all tablinks/buttons
-  tablinks = document.getElementsByClassName("tablink");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].style.backgroundColor = "";
-  }
+      // Remove the background color of all tablinks/buttons
+      tablinks = document.getElementsByClassName("tablink");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].style.backgroundColor = "";
+      }
 
-  // Show the specific tab content
-  document.getElementById(pageName).style.display = "block";
+      // Show the specific tab content
+      document.getElementById(pageName).style.display = "block";
 
-  // Add the specific color to the button used to open the tab content
-  elmnt.style.backgroundColor = color;
-}
+      // Add the specific color to the button used to open the tab content
+      elmnt.style.backgroundColor = color;
+    }
 
-// Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
   </script>
 </head>
 
@@ -52,30 +52,97 @@ document.getElementById("defaultOpen").click();
     </header>
     <section>
       <article class="left_article">
-        <!--Ill add stuff later-->
-        <button class="tablink" onclick="openPage('Home', this, 'red' )" id="defaultOpen">Home</button>
-        <button class="tablink" onclick="openPage('News', this, 'green')">News</button>
-        <button class="tablink" onclick="openPage('Contact', this, 'blue')">Contact</button>
-        <button class="tablink" onclick="openPage('About', this, 'orange')">About</button>
-        <!--Ill add stuff later-->
-        <div id="Home" class="tabcontent">
-          <h3>Home</h3>
-          <p>Home is where the heart is..</p>
+        <!--Just add another row and rename the correct openPage + change the name of the tab-->
+        <button class="tablink" onclick="openPage('President', this)" id="defaultOpen">President</button>
+        <button class="tablink" onclick="openPage('Treasurer', this)">Treasurer</button>
+        <button class="tablink" onclick="openPage('ICC_Rep', this)">ICC Rep</button>
+        <button class="tablink" onclick="openPage('Secretary', this)">Secretary</button>
+        <button class="tablink" onclick="openPage('Alumni1', this)">Alumnus 1</button>
+        <!--Content of the pages under aranged by ID-->
+        <div id="President" class="tabcontent">
+          <h3>Amanda Inostroz</h3>
+          <p>
+            a. Amanda Inostroz , President, Major: Computer Network Administration & Security Management. Expected
+            graduation date: June 2022.
+            b. One of my career goals is to become an IT Security Engineer. It would be great to have a position within
+            the healthcare industry have a role in protecting the information of patients, employers, and employees.
+            c. I love to learn anything related to cybersecurity and programming. For the past two semesters I have
+            participated in the National Cyber League competition and I started off not knowing anything about
+            cybersecurity. Now, I can’t wait for the next competition. On my leisure time, I try to read as much as I
+            can about network security topics and am also focusing on learning how to code.
+          </p>
         </div>
-        
-        <div id="News" class="tabcontent">
-          <h3>News</h3>
-          <p>Some news this fine day!</p>
+
+        <div id="Treasurer" class="tabcontent">
+          <h3>Hector Torres</h3>
+          <p>
+            1. Information Name: Hector Torres, Treasurer, Major: Computer Networking Administration and Security
+            Management, Graduation Date: June 2021
+            2. Career Path/Goals: Help Desk to System Admin to SOC Analyst to IT Director/Cybersecurity Specialist
+            3. Interest: I like to know more about the communications between computers and how to secure them. Plus I
+            like
+            cyber competitions that challenge me.</p>
         </div>
-        
-        <div id="Contact" class="tabcontent">
-          <h3>Contact</h3>
-          <p>Get in touch, or swing by for a cup of coffee.</p>
+
+        <div id="ICC_Rep" class="tabcontent">
+          <h3>Christian Cardozo</h3>
+          <p>Hello Everyone. My name is Christian Cardozo, and I am the ICC Rep for the CIS Club. I will be transferring
+            this fall to CSUSB and will be majoring in information technology with a concentration in cyber security. I
+            would like to explore the different branches within cybersecurity and follow a career path to become a
+            cybersecurity analyst or a penetration tester. Some fields that seem interesting and would like to explore
+            more are cryptography and forensics.</p>
         </div>
-        
-        <div id="About" class="tabcontent">
-          <h3>About</h3>
-          <p>Who we are and what we do.</p>
+
+        <div id="Secretary" class="tabcontent">
+          <h3>Peggy Xu</h3>
+          <p>
+            Current Major: Computer Information Technology- Transferring
+            Career Path / Goals
+            My career path is to work in any office job. For example, human resources, front desk, or at a school. My
+            goal is to get a Bachelor's degree which I will start next semester when I transfer. After getting a
+            Bachelor's degree I want to move on for my Masters. I want to work at tech companies as well such as cisco.
+
+            Interests (hobbies, or fields of IT / CIS that interests you, your specialty or area of concentration)
+            The fields that interest me are administration.</p>
+        </div>
+
+        <div id="Alumni1" class="tabcontent">
+          <h3>Ricardo Duran</h3>
+          <p>Former CIS Club President</p>
+          <p>
+            1)
+            When did you graduate and what degree/certificate did you gain from it?
+            I graduated Spring of 2017 with my AS in Network Administration & Security Management.
+            <br>
+            2)
+            What's your current profession?
+            I worked for the last 3.5 years as an IT Analyst for a Major Credit Bureau. I was working heavily with Cloud
+            Technologies like AWS. I was very recently hired on to a public energy utility to work as an IT Associate
+            rotating within 3 departments. I an currently working with the Networking and Architecture department. In
+            this department I will be tasked with maintaining network data circuits and network appliances such as
+            switches, routers, firewalls.
+            <br>
+            3)
+            How did the CIS department/program help prepare you for your profession or in general?
+            The Mt. SAC CIS department was key to preparing me for the IT jobs out there. Of course it is imperative
+            that you learn new skills and technologies on your own by completing certificates or pursuing a higher
+            education but the CIS department introduced me to people in IT with varying levels of experience. It was
+            meeting those people that helped me get to where I am today.
+            <br>
+            4)
+            What advice would you give for current students looking for jobs/internships?
+            Study hard and NETWORK! You can be an nerd all you want but in the IT world you need people skills as much
+            as you need technical skills; maybe even more so. I used to think that being the most knowledgeable person
+            in the room was key to getting the job but I learned after countless interviews that I needed to know how to
+            interact with people. Attend social mixers hosted by the college, career fairs, talk to your peers; these
+            are all great ways to find your next path in IT.
+            <br>
+            5)
+            Anything else you want to say?
+            One LifeProTip I would offer you is to take care of your physical and mental health. IT is fun, challenging
+            and full of free or subsidized food. Seriously, if you neglect your well-being you will gain TONS of weight
+            and lose days of sleep. Have a good exercise routine and sleep schedule.
+          </p>
         </div>
       </article>
 
