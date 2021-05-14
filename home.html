@@ -23,6 +23,49 @@ p.info
 <link href="css/Home.css" rel="stylesheet" type="text/css">
 
 </head>
+
+<!--CODE FOR THE CLOCK-->
+<script type="text/javascript">
+  function updateClock(){
+    var now = new Date();
+    var dname = now.getDay(),
+        mo = now.getMonth(),
+        dnum = now.getDate(),
+        yr = now.getFullYear(),
+        hou = now.getHours(),
+        min = now.getMinutes(),
+        sec = now.getSeconds(),
+        pe = "AM";
+
+        if(hou >= 12){
+          pe = "PM";
+        }
+        if(hou == 0){
+          hou = 12;
+        }
+        if(hou > 12){
+          hou = hou - 12;
+        }
+
+        Number.prototype.pad = function(digits){
+          for(var n = this.toString(); n.length < digits; n = 0 + n);
+          return n;
+        }
+
+        var months = ["January", "February", "March", "April", "May", "June", "July", "Augest", "September", "October", "November", "December"];
+        var week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        var ids = ["dayname", "month", "daynum", "year", "hour", "minutes", "seconds", "period"];
+        var values = [week[dname], months[mo], dnum.pad(2), yr, hou.pad(2), min.pad(2), sec.pad(2), pe];
+        for(var i = 0; i < ids.length; i++)
+        document.getElementById(ids[i]).firstChild.nodeValue = values[i];
+  }
+
+  function initClock(){
+    updateClock();
+    window.setInterval("updateClock()", 1);
+  }
+  </script>
+
 <body onload="initClock()">
 
 <!-- The div classes is in the CSS page -->
@@ -102,14 +145,11 @@ p.info
 
 
       <h3>Ready to Join?</h3>
-      
+
+      <!--SIMPLIFIED NOTIFICATION-->
       <p class="info">
-        <strong>&nbsp;</strong>
-      Click on the <strong>Contact Us</strong> tab above to ask us a question and to join our Discord!
-      </p>
-
-
-
+        The meeting is at every <strong>Thursday at 12 o'clock noon, ending at 1 PM during the semester!</strong> Check it out when you have the chance!
+      </p>      
 
       <!-- Below is the area where you will have to edit on the meeting times
       of the CIS club, maybe we can edit the code so you don't have to go in html to 
@@ -136,48 +176,12 @@ p.info
       </div>
     </div>
     <!--digital clock end-->
-
-    <script type="text/javascript">
-    function updateClock(){
-      var now = new Date();
-      var dname = now.getDay(),
-          mo = now.getMonth(),
-          dnum = now.getDate(),
-          yr = now.getFullYear(),
-          hou = now.getHours(),
-          min = now.getMinutes(),
-          sec = now.getSeconds(),
-          pe = "AM";
-
-          if(hou >= 12){
-            pe = "PM";
-          }
-          if(hou == 0){
-            hou = 12;
-          }
-          if(hou > 12){
-            hou = hou - 12;
-          }
-
-          Number.prototype.pad = function(digits){
-            for(var n = this.toString(); n.length < digits; n = 0 + n);
-            return n;
-          }
-
-          var months = ["January", "February", "March", "April", "May", "June", "July", "Augest", "September", "October", "November", "December"];
-          var week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-          var ids = ["dayname", "month", "daynum", "year", "hour", "minutes", "seconds", "period"];
-          var values = [week[dname], months[mo], dnum.pad(2), yr, hou.pad(2), min.pad(2), sec.pad(2), pe];
-          for(var i = 0; i < ids.length; i++)
-          document.getElementById(ids[i]).firstChild.nodeValue = values[i];
-    }
-
-    function initClock(){
-      updateClock();
-      window.setInterval("updateClock()", 1);
-    }
-    </script>
     </div>
+
+    <p class="info">
+      <strong>&nbsp;</strong>
+    You can also click on the <strong>Contact Us</strong> tab above to ask us a question and to join our Discord!
+    </p>
 
     <p>
       <!-- The link to the zoom meeting -->
