@@ -35,7 +35,20 @@ p.info
         hou = now.getHours(),
         min = now.getMinutes(),
         sec = now.getSeconds(),
-        pe = "AM";
+        pe = "AM",
+
+//WHERE YOU WOULD HAVE TO EDIT WHEN THE MEETING WILL BE!---------------------------------------------------------------------------------
+//FOR MEETING DAY, SUNDAY = 0, MONDAY = 1, TUESDAY = 2, WEDNESDAY = 3, THURSDAY = 4, FRIDAY = 5, SATURDAY = 6
+        MEETING_DAY = 4,
+//WHAT TIME DO YOU WANT THE MEETING TO BE, FROM 1 - 12 AM OR PM?
+        MEETING_TIME_HOUR = 12,
+        MEETING_TIME_MINUTE = 00,
+        AM_OR_PM = "PM",
+
+//FOR THE END MEETING TIME
+        MEETING_TIME_HOUR2 = MEETING_TIME_HOUR + 1,
+        AM_OR_PM2 = AM_OR_PM;
+        
 
         if(hou >= 12){
           pe = "PM";
@@ -45,6 +58,28 @@ p.info
         }
         if(hou > 12){
           hou = hou - 12;
+        }
+
+//TO REVERT TIME BACK TO 1PM IN CASE MEETING IS IN 12 NOON
+        if(MEETING_TIME_HOUR2 > 12){
+          MEETING_TIME_HOUR2 = MEETING_TIME_HOUR2 - 12;
+        }
+
+        if(MEETING_TIME_HOUR == 11 && AM_OR_PM == "AM"){
+          AM_OR_PM2 = "PM";
+        }
+
+        if (dname == MEETING_DAY && ((hou == MEETING_TIME_HOUR && min >= MEETING_TIME_MINUTE && AM_OR_PM == pe) || (hou == MEETING_TIME_HOUR2 && min < MEETING_TIME_MINUTE) && AM_OR_PM2 == pe) ){
+          document.getElementById("dayname").style.color = "green";
+          document.getElementById("hour").style.color = "green";
+          document.getElementById("minutes").style.color = "green";
+          document.getElementById("seconds").style.color = "green";
+        }
+        else{
+          document.getElementById("dayname").style.color = "black";
+          document.getElementById("hour").style.color = "black";
+          document.getElementById("minutes").style.color = "black";
+          document.getElementById("seconds").style.color = "black";
         }
 
         Number.prototype.pad = function(digits){
@@ -146,7 +181,7 @@ p.info
 
       <h3>Ready to Join?</h3>
 
-      <!--SIMPLIFIED NOTIFICATION-->
+<!--WHERE YOU WOULD HAVE TO EDIT WHEN THE MEETING WILL BE!------------------------------------------------------------------------------------------------------------------------------------>
       <p class="info">
         The meeting is at every <strong>Thursday at 12 o'clock noon, ending at 1 PM during the semester!</strong> Check it out when you have the chance!
       </p>      
