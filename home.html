@@ -69,6 +69,8 @@ p.info
           AM_OR_PM2 = "PM";
         }
 
+
+
         if (dname == MEETING_DAY){
           document.getElementById("dayname").style.color = "green";
 
@@ -80,13 +82,16 @@ p.info
           }
           else
           {
-            document.getElementById("hour").style.color = "black";
-            document.getElementById("minutes").style.color = "black";
-            document.getElementById("seconds").style.color = "black";
+            document.getElementById("hour").style.color = "red";
+            document.getElementById("minutes").style.color = "red";
+            document.getElementById("seconds").style.color = "red";
           }
         }
         else{
           document.getElementById("dayname").style.color = "black";
+          document.getElementById("hour").style.color = "black";
+          document.getElementById("minutes").style.color = "black";
+          document.getElementById("seconds").style.color = "black";
         }
         
 
