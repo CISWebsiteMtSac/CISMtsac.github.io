@@ -39,3 +39,15 @@ body, html {
   #News {background-color: green;}
   #Contact {background-color: blue;}
   #About {background-color: orange;}
+
+h2{
+    font-family: Sarala, sans-serif;
+    font-size: 32px;
+    font-weight: 100;
+    color: rgba(0, 0, 0, 1);
+    text-transform: none;
+    font-style: normal;
+    text-decoration: none;
+    line-height: 0em;
+    letter-spacing: 0.8px;
+}
