@@ -47,7 +47,9 @@ p.info
 
 //FOR THE END MEETING TIME
         MEETING_TIME_HOUR2 = MEETING_TIME_HOUR + 1,
-        AM_OR_PM2 = AM_OR_PM;
+        AM_OR_PM2 = AM_OR_PM,
+        
+        NOTIFICATION = "The meeting isn't going on today.";
         
 
         if(hou >= 12){
@@ -73,18 +75,33 @@ p.info
 
         if (dname == MEETING_DAY){
           document.getElementById("dayname").style.color = "green";
+          document.getElementById("notification").style.color = "green";
+          NOTIFICATION = "The meeting is going to start later today.";
 
           if ((hou == MEETING_TIME_HOUR && min >= MEETING_TIME_MINUTE && AM_OR_PM == pe) || (hou == MEETING_TIME_HOUR2 && min < MEETING_TIME_MINUTE) && AM_OR_PM2 == pe)
           {
             document.getElementById("hour").style.color = "green";
             document.getElementById("minutes").style.color = "green";
             document.getElementById("seconds").style.color = "green";
+            NOTIFICATION = "The meeting is going on right now!";
           }
-          else
+          else if((hou > MEETING_TIME_HOUR2 && AM_OR_PM2 == pe) || ((hou == MEETING_TIME_HOUR2 && min < MEETING_TIME_MINUTE) && AM_OR_PM2 == pe))
           {
             document.getElementById("hour").style.color = "red";
             document.getElementById("minutes").style.color = "red";
             document.getElementById("seconds").style.color = "red";
+            document.getElementById("notification").style.color = "red";
+            NOTIFICATION = "The meeting has already happened, the meeting will happen next week.";
+
+            if (AM_OR_PM2 == "AM")
+            {
+              document.getElementById("hour").style.color = "red";
+              document.getElementById("minutes").style.color = "red";
+              document.getElementById("seconds").style.color = "red";
+              document.getElementById("notification").style.color = "red";
+              NOTIFICATION = "The meeting has already happened, the meeting will happen next week.";
+            }
+
           }
         }
         else{
@@ -92,6 +109,8 @@ p.info
           document.getElementById("hour").style.color = "black";
           document.getElementById("minutes").style.color = "black";
           document.getElementById("seconds").style.color = "black";
+          document.getElementById("notification").style.color = "black";
+          NOTIFICATION = "The meeting isn't going on today.";
         }
         
 
@@ -102,8 +121,8 @@ p.info
 
         var months = ["January", "February", "March", "April", "May", "June", "July", "Augest", "September", "October", "November", "December"];
         var week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-        var ids = ["dayname", "month", "daynum", "year", "hour", "minutes", "seconds", "period"];
-        var values = [week[dname], months[mo], dnum.pad(2), yr, hou.pad(2), min.pad(2), sec.pad(2), pe];
+        var ids = ["meetingday", "meetinghour", "meetingminutes", "meetingperiod", "meetinghour2", "meetingminutes2", "meetingperiod2", "dayname", "month", "daynum", "year", "hour", "minutes", "seconds", "period", "notification"];
+        var values = [week[MEETING_DAY] ,MEETING_TIME_HOUR.pad(2),MEETING_TIME_MINUTE.pad(2),AM_OR_PM,MEETING_TIME_HOUR2.pad(2),MEETING_TIME_MINUTE.pad(2),AM_OR_PM2, week[dname], months[mo], dnum.pad(2), yr, hou.pad(2), min.pad(2), sec.pad(2), pe, NOTIFICATION];
         for(var i = 0; i < ids.length; i++)
         document.getElementById(ids[i]).firstChild.nodeValue = values[i];
   }
@@ -195,9 +214,27 @@ p.info
       <h3>Ready to Join?</h3>
 
 <!--WHERE YOU WOULD HAVE TO EDIT WHEN THE MEETING WILL BE!------------------------------------------------------------------------------------------------------------------------------------>
-      <p class="info">
-        The meeting is at every <strong>Thursday at 12 o'clock noon, ending at 1 PM during the semester!</strong> Check it out when you have the chance!
-      </p>      
+
+    <p>
+      The meeting takes place
+      <strong>
+        every
+        <span id ="meetingday">Day</span>, at
+        <span id="meetinghour">00</span>:
+        <span id="meetingminutes">00</span>
+        <span id="meetingperiod">AM</span>
+      </strong>
+      ,
+      ending at
+      <strong>
+        <span id="meetinghour2">00</span>:
+        <span id="meetingminutes2">00</span>
+        <span id="meetingperiod2">AM</span>
+      </strong>
+      thoughout the Fall or Spring semesters.
+    </p>
+    
+      
 
       <!-- Below is the area where you will have to edit on the meeting times
       of the CIS club, maybe we can edit the code so you don't have to go in html to 
@@ -226,15 +263,24 @@ p.info
     <!--digital clock end-->
     </div>
 
-    <p class="info">
-      <strong>&nbsp;</strong>
-    You can also click on the <strong>Contact Us</strong> tab above to ask us a question and to join our Discord!
+
+    <p>
+      <span id="notification">notify</span>
     </p>
 
     <p>
       <!-- The link to the zoom meeting -->
       <br><strong><a href="https://mtsac-edu.zoom.us/j/96907343944?pwd=b3ZTVVR4YjRVd0JhblBSMTJaMXIwZz09">Click Here for the Zoom Meeting Link!</a></strong>
     </p>
+    
+    <hr>
+
+    <p class="info">
+      <strong>&nbsp;</strong>
+    You can also click on the <strong>Contact Us</strong> tab above to ask us a question and to join our Discord!
+    </p>
+
+    
     
     <!-- Mount Sac title -->
     <p>
