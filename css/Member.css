@@ -34,8 +34,13 @@ body, html {
 	padding: 100px 20px;
 	height: 100%;
   }
-  
-  #Home {background-color: red;}
-  #News {background-color: green;}
-  #Contact {background-color: blue;}
-  #About {background-color: orange;}
+  .tabcontent {
+	  border: black;
+	  border-width: 2px;
+	  border-style: groove;
+	  margin: center;
+	  width: 90%;
+	  text-align: center;
+	  margin-left: auto;
+		margin-right: auto;
+  }
