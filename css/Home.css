@@ -348,3 +348,31 @@ body {
 .grid-container > div {
 	text-align: center;
 }
+
+
+/*REFERENCE FOR THE SPEECH BUBBLE: https://codingislove.com/css-speech-bubbles/ */
+.speech{
+
+	width: auto;
+	margin: auto;
+  	background: #00bfb6;
+ 	padding: 20px;
+  	text-align: center;
+  	font-weight: 900;
+  	color: #fff;
+  	font-family: arial;
+  	position: relative;
+}
+
+.bubble:before {
+	content: "";
+	width: 0px;
+	height: 0px;
+	position: absolute;
+	border-left: 10px solid transparent;
+	border-right: 10px solid #00bfb6;
+	border-top: 10px solid #00bfb6;
+	border-bottom: 10px solid transparent;
+	left: -19px;
+	top: 6px;
+  }
