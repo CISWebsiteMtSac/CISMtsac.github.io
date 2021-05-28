@@ -1,3 +1,11 @@
+<!--
+  REFER TO LINES 48 THROUGH 54 OF THIS FILE TO CHANGE THE VARIABLES TO PROPERLY
+  MAKE THE CLOCK FORMULA TO WORK AS INTENDED.
+-->
+<!--
+  IN CASE YOU NEED TO CHANGE THE LINK TO THE ZOOM MEETING, REFER TO LINE 283 OF THIS FILE
+-->
+
 <!doctype html>
 <html>
 <head>
@@ -24,7 +32,7 @@ p.info
 
 </head>
 
-<!--CODE FOR THE CLOCK-->
+<!--CODE FOR THE CLOCK (ONLY CHANGE THE VARIABLES IN THE SPECIFIED LINES FROM THE BEGINNING COMMENT)-->
 <script type="text/javascript">
   function updateClock(){
     var now = new Date();
@@ -47,7 +55,9 @@ p.info
 
 //FOR THE END MEETING TIME
         MEETING_TIME_HOUR2 = MEETING_TIME_HOUR + 1,
-        AM_OR_PM2 = AM_OR_PM;
+        AM_OR_PM2 = AM_OR_PM,
+        
+        NOTIFICATION = "The meeting isn't going on today.";
         
 
         if(hou >= 12){
@@ -70,21 +80,44 @@ p.info
         }
 
 
+//THE FORMULA FOR THE CLOCK, IN CASE OF NEEDING TO CHANGE THE FORMULA: THE GUIDE TO THE INITIAL FORMULA IS HERE:
+//GUIDE TO THE CLOCK:  
+//https://www.youtube.com/watch?v=paiI1N96EpQ
+//https://www.codingsnow.com/2021/01/digital-clock-with-date-day-month-year.html
 
-        if (dname == MEETING_DAY){
+          if (dname == MEETING_DAY){
           document.getElementById("dayname").style.color = "green";
+          document.getElementById("notification").style.color = "green";
+          document.getElementById("link").style.display;
+          NOTIFICATION = "The meeting is going to start later today.";
 
           if ((hou == MEETING_TIME_HOUR && min >= MEETING_TIME_MINUTE && AM_OR_PM == pe) || (hou == MEETING_TIME_HOUR2 && min < MEETING_TIME_MINUTE) && AM_OR_PM2 == pe)
           {
             document.getElementById("hour").style.color = "green";
             document.getElementById("minutes").style.color = "green";
             document.getElementById("seconds").style.color = "green";
+            document.getElementById("link").style.display;
+            NOTIFICATION = "The meeting is going on right now!";
           }
-          else
+          else if((hou > MEETING_TIME_HOUR2 && AM_OR_PM2 == pe) || ((hou == MEETING_TIME_HOUR2 && min < MEETING_TIME_MINUTE) && AM_OR_PM2 == pe))
           {
             document.getElementById("hour").style.color = "red";
             document.getElementById("minutes").style.color = "red";
             document.getElementById("seconds").style.color = "red";
+            document.getElementById("notification").style.color = "red";
+            document.getElementById("link").style.display = "none";
+            NOTIFICATION = "The meeting has already happened, the meeting will happen next week.";
+
+            if (AM_OR_PM2 == "AM")
+            {
+              document.getElementById("hour").style.color = "red";
+              document.getElementById("minutes").style.color = "red";
+              document.getElementById("seconds").style.color = "red";
+              document.getElementById("notification").style.color = "red";
+              document.getElementById("link").style.display = "none";
+              NOTIFICATION = "The meeting has already happened, the meeting will happen next week.";
+            }
+
           }
         }
         else{
@@ -92,6 +125,9 @@ p.info
           document.getElementById("hour").style.color = "black";
           document.getElementById("minutes").style.color = "black";
           document.getElementById("seconds").style.color = "black";
+          document.getElementById("notification").style.color = "black";
+          document.getElementById("link").style.display = "none";
+          NOTIFICATION = "The meeting isn't going on today.";
         }
         
 
@@ -102,8 +138,8 @@ p.info
 
         var months = ["January", "February", "March", "April", "May", "June", "July", "Augest", "September", "October", "November", "December"];
         var week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-        var ids = ["dayname", "month", "daynum", "year", "hour", "minutes", "seconds", "period"];
-        var values = [week[dname], months[mo], dnum.pad(2), yr, hou.pad(2), min.pad(2), sec.pad(2), pe];
+        var ids = ["meetingday", "meetinghour", "meetingminutes", "meetingperiod", "meetinghour2", "meetingminutes2", "meetingperiod2", "dayname", "month", "daynum", "year", "hour", "minutes", "seconds", "period", "notification", "link"];
+        var values = [week[MEETING_DAY] ,MEETING_TIME_HOUR.pad(2),MEETING_TIME_MINUTE.pad(2),AM_OR_PM,MEETING_TIME_HOUR2.pad(2),MEETING_TIME_MINUTE.pad(2),AM_OR_PM2, week[dname], months[mo], dnum.pad(2), yr, hou.pad(2), min.pad(2), sec.pad(2), pe, NOTIFICATION];
         for(var i = 0; i < ids.length; i++)
         document.getElementById(ids[i]).firstChild.nodeValue = values[i];
   }
@@ -143,21 +179,34 @@ p.info
       <!-- The beginning of the left article page -->
       <h3>What is the CIS Club?</h3>
       
-      <!-- Like the other paragraphs, this one is in class info, which establishes
-      what they should look like -->
-      <p class="info">
-        <strong>&nbsp;</strong>
-        The Computer Information Systems (CIS) club is composed of students interested in the field of Information Systems
-        and Information Technology. For many years the CIS club has fostered a higher level of
-        learning through academic excellence and hands on experience in Information Systems.
-        The CIS club promotes many campus activities and opportunities for community service,
-        internships, and networking with many of today's top companies.
-      </p>
+      <div class="grid-container">
+        <div>
+          <!-- Joe Mountie picture, the width and height determines on how big the picture should be, also linked to mtsac.edu -->
+          <p>
+            <a href="https://www.mtsac.edu"><img class="logo" src="images/joe_mountie.png" alt="Joe Mountie" width = "200" height = "250" class="image"/></a><br>
+          </p>
+        </div>
+        <div>
+          <!-- Like the other paragraphs, this one is in class info, which establishes
+       what they should look like -->
+        <div class = "speech bubble">
+          <p class="info">
+            <strong>&nbsp;</strong>
+            The Computer Information Systems (CIS) club is composed of students interested in the field of Information Systems
+            and Information Technology. For many years the CIS club has fostered a higher level of
+            learning through academic excellence and hands on experience in Information Systems.
+            The CIS club promotes many campus activities and opportunities for community service,
+            internships, and networking with many of today's top companies.
+          </p>
+        </div>
+        </div>
+      </div>
+      
+      
+      
 
-      <!-- Joe Mountie picture, the width and height determines on how big the picture should be, also linked to mtsac.edu -->
-      <p>
-        <a href="https://www.mtsac.edu"><img class="logo" src="images/joe_mountie.png" alt="Joe Mountie" width = "300" height = "350" class="image"/></a><br>
-      </p>
+      
+      
 
 
 
@@ -175,17 +224,22 @@ p.info
       overview or check out either website by <strong>clicking the images below!</strong>
       </p>
 
-      <!-- The National Cyber League logo, also linked to the ncl website -->
-      <p class="info">
-        <a href="https://nationalcyberleague.org"><img class="logo" src="images/National-Cyber-League-logo.jpg" alt="National Cyber League" width = "300" height = "150" class="image"/></a><br>
-        Put your skills to the test!
+      <p>
+        <a href="https://nationalcyberleague.org"><img class="logo" src="images/National-Cyber-League-logo.jpg" alt="National Cyber League" width = "300" height = "150" class="image"/></a>
+        <a href="https://uscc.cyberquests.org/"><img class="logo" src="images/CyberQuests.jpg" alt="CyberQuests" width = "300" height = "150" class="image"/></a>
       </p>
-      
+
+
+      <!-- The National Cyber League logo, also linked to the ncl website -->
       <!-- The Cyber Quests logo, also linked to the cyber quest website -->
       <p class="info">
-        <a href="https://uscc.cyberquests.org/"><img class="logo" src="images/CyberQuests.jpg" alt="CyberQuests" width = "300" height = "150" class="image"/></a><br>
+        Put your skills to the test!
         Are you ready for the quest of knowledge and experience?
       </p>
+
+      
+      
+      
 
 
 
@@ -194,47 +248,76 @@ p.info
 
       <h3>Ready to Join?</h3>
 
-<!--WHERE YOU WOULD HAVE TO EDIT WHEN THE MEETING WILL BE!------------------------------------------------------------------------------------------------------------------------------------>
-      <p class="info">
-        The meeting is at every <strong>Thursday at 12 o'clock noon, ending at 1 PM during the semester!</strong> Check it out when you have the chance!
-      </p>      
-
-      <!-- Below is the area where you will have to edit on the meeting times
-      of the CIS club, maybe we can edit the code so you don't have to go in html to 
-    edit the page -->
-
     <!--GUIDE TO THE CLOCK:  
     https://www.youtube.com/watch?v=paiI1N96EpQ
     https://www.codingsnow.com/2021/01/digital-clock-with-date-day-month-year.html
     -->
+
+    <div class="grid-container">
+      <div>
+        <p>
+          The meeting takes place
+          <strong>
+            every
+            <span id ="meetingday">Day</span>, at
+            <span id="meetinghour">00</span>:
+            <span id="meetingminutes">00</span>
+            <span id="meetingperiod">AM</span>
+          </strong>
+          and ending at
+          <strong>
+            <span id="meetinghour2">00</span>:
+            <span id="meetingminutes2">00</span>
+            <span id="meetingperiod2">AM</span>
+          </strong>
+          throughout the Fall or Spring semesters.
+        </p>    
+      </div>
+      <div>
+        <p>
+          <strong>NOTE: <span id="notification">notify</span></strong><br><br>
+          
+          <!-- The link to the zoom meeting------------------------------------------------------------------------------------ -->
+          
+          <span id="link">
+            <strong><a href="https://mtsac-edu.zoom.us/j/96907343944?pwd=b3ZTVVR4YjRVd0JhblBSMTJaMXIwZz09">Click Here for the Zoom Meeting Link!</a></strong>
+          </span>
+        </p>    
+      </div>
+    </div>
+
+    <!-- THE CLOCK WILL APPEAR HERE, THE ACTUAL FORMULA WILL BE IN JAVASCRIPT, OR <SCRIPT>, AT THE TOP OF THE PAGE HERE -->
+
     <div class = "clock">
-    <!--digital clock start-->
-    <div class="datetime">
-      <div class="date">
-        <span id="dayname">Day</span>,
-        <span id="month">Month</span>
-        <span id="daynum">00</span>,
-        <span id="year">Year</span>
+      <!--digital clock start-->
+      <div class="datetime">
+        <div class="date">
+          <span id="dayname">Day</span>,
+          <span id="month">Month</span>
+          <span id="daynum">00</span>,
+          <span id="year">Year</span>
+        </div>
+        <div class="time">
+          <span id="hour">00</span>:
+          <span id="minutes">00</span>:
+          <span id="seconds">00</span>
+          <span id="period">AM</span>
+        </div>
       </div>
-      <div class="time">
-        <span id="hour">00</span>:
-        <span id="minutes">00</span>:
-        <span id="seconds">00</span>
-        <span id="period">AM</span>
-      </div>
-    </div>
-    <!--digital clock end-->
-    </div>
+      <!--digital clock end-->
+    </div>        
+
+
+    
+    
+    
 
     <p class="info">
       <strong>&nbsp;</strong>
     You can also click on the <strong>Contact Us</strong> tab above to ask us a question and to join our Discord!
     </p>
 
-    <p>
-      <!-- The link to the zoom meeting -->
-      <br><strong><a href="https://mtsac-edu.zoom.us/j/96907343944?pwd=b3ZTVVR4YjRVd0JhblBSMTJaMXIwZz09">Click Here for the Zoom Meeting Link!</a></strong>
-    </p>
+    
     
     <!-- Mount Sac title -->
     <p>
