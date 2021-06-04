@@ -304,3 +304,7 @@ body {
 	left: -19px;
 	top: 6px;
   }
+
+  #rightside {
+	border-right: none;
+}
