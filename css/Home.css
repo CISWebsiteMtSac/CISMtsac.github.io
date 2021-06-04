@@ -34,8 +34,9 @@ a {
 /*Area where the tabs are supposed to be*/
 .secondary_header {
 	width: 100%;
-	padding-top: auto;
-	padding-bottom: auto;
+	padding-top: 5px;
+	margin-top: auto;
+	margin-bottom: auto;
 	background-color: darkgoldenrod;
 	clear: right;
 }
