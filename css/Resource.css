@@ -3,39 +3,38 @@
 .noDisplay {
 	display: none;
 }
+/* grid-container sets up the containers used (two side by side in this case) */
 .grid-container {
 	display: grid;
-	grid-template-columns: 50% 50%;
+	grid-template-columns: 50% 50%; /* here you set how many and how much % they take up, here both equal at 50% */
 	grid-gap: 10px;
 	padding: 10px;
 }
 .grid-container > div {
-	border-right: 2px solid black;
+	border-right: 2px solid black; /* actually a right border not center so each half has a right border*/
 	text-align: center;
 	font-size: 30px;
 }
 .container .left_article h3 {
+	/* affects "Check Out These Resources" */
 	padding-left: 5%;
 	padding-right: 5%;
 	text-align: center;
 	font-size: 35px;
 	margin-top: 0%;
-	color: goldenrod;
+
 	font-weight: bold;
 	text-transform: capitalize;
 	letter-spacing: 0px;
-	color: black;
-  	-webkit-text-fill-color: white;
-  	-webkit-text-stroke-width: 2px;
- 	-webkit-text-stroke-color: black;
-	width: auto;
-	height: auto;
-	padding: auto;
+
+  	-webkit-text-fill-color: white; /* font color */
+  	-webkit-text-stroke-width: 2px; /* thickness of shadow */
+ 	-webkit-text-stroke-color: black; /* font shadow color*/
+	 
 	background-color: darkgoldenrod;
-	box-shadow: 0px 10px 5px grey;
+	box-shadow: 0px 10px 5px grey; /* creates blur/shadow effect below title*/
 	border: 3px solid black;
-  	padding: 0px;
-  	text-align: center;
+
 }
 .container .left_article p {
 	padding-left: 5%;

@@ -3,39 +3,38 @@
 .noDisplay {
 	display: none;
 }
+/* grid-container sets up the containers used (two side by side in this case) */
 .grid-container {
 	display: grid;
-	grid-template-columns: 50% 50%;
+	grid-template-columns: 50% 50%; /* here you set how many and how much % they take up, here both equal at 50% */
 	grid-gap: 10px;
 	padding: 10px;
 }
 .grid-container > div {
-	border-right: 2px solid black;
+	border-right: 2px solid black; /* actually a right border not center so each half has a right border*/
 	text-align: center;
 	font-size: 30px;
 }
 .container .left_article h3 {
+	/* affects Connect with Us */
 	padding-left: 5%;
 	padding-right: 5%;
 	text-align: center;
 	font-size: 35px;
 	margin-top: 0%;
-	color: goldenrod;
+	
 	font-weight: bold;
-	text-transform: none;
+	text-transform: capitalize;
 	letter-spacing: 0px;
-	color: black;
-  	-webkit-text-fill-color: white;
-  	-webkit-text-stroke-width: 2px;
- 	-webkit-text-stroke-color: black;
-	width: auto;
-	height: auto;
-	padding: auto;
+	
+	-webkit-text-fill-color: white; /* font color */
+	-webkit-text-stroke-width: 2px; /* thickness of shadow */
+	-webkit-text-stroke-color: black; /* font shadow color*/
+		 
 	background-color: darkgoldenrod;
-	box-shadow: 0px 10px 5px grey;
+	box-shadow: 0px 10px 5px grey; /* creates blur/shadow effect below title*/
 	border: 3px solid black;
-  	padding: 0px;
-  	text-align: center;
+	
 }
 .container .left_article p {
 	padding-left: 5%;
@@ -47,25 +46,24 @@
 	color: black;
 	font-size: 150%;
 }
-.container .left_article button {
+.container .left_article button { /* Affects "Click Here to Email" */
 	background-color: darkgoldenrod;
-	font-family: "Sofia";
-	box-shadow: 0px 10px 5px grey;
+
+	box-shadow: 0px 10px 5px grey; /* creates blur/shadow effect below title*/
 	border: 3px solid black;
   	margin-top: 0%;
-	padding: 5px;
-	font-size: 80%;
+	padding: 5px; /* changes space between text in button and its borders */
   	text-align: center;
   	cursor: pointer;
 	font-weight: bold;
 	font-style: normal;
 	font-family: "Helvetica";
 	font-size: 32px;
-	text-align: center;
+
 	  
 	letter-spacing: 0px;
-	color: black;
-	-webkit-text-fill-color: white;
-	-webkit-text-stroke-width: 2px;
-	-webkit-text-stroke-color: black;
+
+	-webkit-text-fill-color: white; /* font color */
+	-webkit-text-stroke-width: 2px; /* thickness of shadow */
+	-webkit-text-stroke-color: black; /* font shadow color*/
 }
