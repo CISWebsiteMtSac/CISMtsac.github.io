@@ -34,8 +34,8 @@ a {
 /*Area where the tabs are supposed to be*/
 .secondary_header {
 	width: 100%;
-	padding-top: 5px;
-	padding-bottom: 5px;
+	padding-top: auto;
+	padding-bottom: auto;
 	background-color: darkgoldenrod;
 	clear: right;
 }
@@ -52,6 +52,7 @@ a {
 }
 .secondary_header ul li {
 	justify-content: center;
+	font-size: 24px;
 	list-style: none;
 	float: left;
 	margin-right: auto;
